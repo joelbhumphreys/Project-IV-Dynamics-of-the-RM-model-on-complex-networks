@@ -14,7 +14,6 @@ plot(num_patches, num_stab_pnts, '-o', 'LineWidth', 2, 'MarkerSize', 8);
 
 xlabel('Num patches', 'FontSize', 14);
 ylabel('Num points where partial-prey-death eqm is stable', 'FontSize', 14);
-title('$\alpha = 1, \beta = 1, K = 1, d = 1$', 'Interpreter', 'latex', 'FontSize', 16);
 
 grid on;
 
