@@ -9,7 +9,7 @@ function resultMatrix = find_pred_death(num_patches, K)
 end
 
 function combinations = generateCombinations(possibilities, num_patches)
-    % Recursive function to generate all combinations of 0 and K
+    % The function generates all possible combinations of 0 and K with given dimensionality 
 
     if num_patches == 1
         combinations = possibilities;
