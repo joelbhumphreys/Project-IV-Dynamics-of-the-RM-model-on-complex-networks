@@ -1,10 +1,10 @@
-function resultMatrix = find_pred_death(num_patches, K)
+function pred_death_eqa = find_pred_death(num_patches, K)
 
     possibilities = [0; K];
     combinations = generateCombinations(possibilities, num_patches);
 
     combinations = combinations(~all(combinations == 0, 2), :);
-    resultMatrix = [combinations, zeros(size(combinations, 1), num_patches)];
+    pred_death_eqa = [combinations, zeros(size(combinations, 1), num_patches)];
 
 end
 
