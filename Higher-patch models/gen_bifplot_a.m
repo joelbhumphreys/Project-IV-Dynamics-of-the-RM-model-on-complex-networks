@@ -10,11 +10,11 @@ function gen_bif_plot_a()
         KList = 0.01:0.13:12.01;
         alpha = 16;  
     
-        matrixWithCells = cell(length(betaList), length(KList));
+        parameterMatrix = cell(length(betaList), length(KList));
         
         for i = 1:length(betaList)
             for j = 1:length(KList)
-                matrixWithCells{i, j} = [betaList(i), KList(j)];
+                parameterMatrix{i, j} = [betaList(i), KList(j)];
             end
         end
         
@@ -126,14 +126,14 @@ function gen_bif_plot_a()
         end        
         
         % Extract coordinates from the parameter matrix
-        coordinates = cell2mat(matrixWithCells(:));
+        coordinates = cell2mat(parameterMatrix(:));
         
         % Extract colours from the colour matrix
-        colors = cell2mat(colourMatrix(:));
+        colours = cell2mat(colourMatrix(:));
         
         % Create a scatter plot of the colours
         figure;
-        scatter(coordinates(:, 1), coordinates(:, 2), 50, colors, 'filled');
+        scatter(coordinates(:, 1), coordinates(:, 2), 50, colours, 'filled');
     
         title_str = sprintf('$d = %g, \\alpha = 16$', d);    
         title(title_str, 'Interpreter', 'latex', 'FontSize', 25); 
