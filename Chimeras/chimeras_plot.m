@@ -1,17 +1,17 @@
 rng(1); % Set random seed
 
-num_patches = 7; % Set number of patches
+num_patches = 100; % Set number of patches
 
 % Set parameter values
-d = 0.01;
-K = 120;
-beta = 0.1;
+d = 1e-3;
+K = 4;
+beta = 1;
 
 % Iterate over alpha
 for i = [1]
     alpha = i; % set value of alpha
         
-    A = find_ad_matrix(num_patches); % set up appropriate adjacency matrix
+    A = find_ad_matrix2(num_patches); % set up appropriate adjacency matrix
     L = A - diag(sum(A, 1)); % set Laplacian matrix
     
     x0 = 1 + abs(1e1 * randn(2 * size(A, 1), 1)); % initial conditions
