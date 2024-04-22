@@ -4,11 +4,11 @@ for K = [6, 11, 16]
     alphaList = 22.01:0.01:47.01;
     betaList = 15.01:0.01:35.01;
     
-    matrixWithCells = cell(length(alphaList), length(betaList));
+    parameterMatrix = cell(length(alphaList), length(betaList));
     
     for i = 1:length(alphaList)
         for j = 1:length(betaList)
-            matrixWithCells{i, j} = [alphaList(i), betaList(j)];
+            parameterMatrix{i, j} = [alphaList(i), betaList(j)];
         end
     end
     
@@ -72,14 +72,14 @@ for K = [6, 11, 16]
     end
     
     % Extract coordinates from the parameter matrix
-    coordinates = cell2mat(matrixWithCells(:));
+    coordinates = cell2mat(parameterMatrix(:));
     
     % Extract colours from the colour matrix
-    colors = cell2mat(colourMatrix(:));
+    colours = cell2mat(colourMatrix(:));
     
     % Create a scatter plot of the colours
     figure;
-    scatter(coordinates(:, 1), coordinates(:, 2), 50, colors, 'filled');
+    scatter(coordinates(:, 1), coordinates(:, 2), 50, colours, 'filled');
 
     title_str = sprintf('$K = %g$', K);
     title(title_str, 'Interpreter', 'latex', 'FontSize', 25);    
