@@ -2,26 +2,22 @@ rng(1);
 
 % Plot Poincare section
 
-x_value = 0;
+beta = 10;    
+K = 10;
+alpha = 16;
+d = 1; 
+
 currentYLim = ylim;
 currentZLim = zlim;
 
 % Generate a grid of points in 3D
 [y, z] = meshgrid(currentYLim(1):0.1:currentYLim(2), currentZLim(1):0.1:currentZLim(2));
 
-x = x_value * ones(size(y));
+x = alpha / (alpha - beta); % define the constant coordinate of the plane
 
-beta = 10;    
-K = 10;
-alpha = 16;
-d = 1; 
-
-dist = alpha / (alpha - beta); % define Poincare section
-x = x + dist;
-
-% Plot the plane using surf
+% Plot the plane 
 figure;
-surf(x, y, z, 'FaceColor', 'cyan', 'EdgeColor', 'none', 'FaceAlpha', 0.3); % Adjusted for better visibility
+surf(x, y, z, 'FaceColor', 'cyan', 'EdgeColor', 'none', 'FaceAlpha', 0.3); 
 hold on;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
