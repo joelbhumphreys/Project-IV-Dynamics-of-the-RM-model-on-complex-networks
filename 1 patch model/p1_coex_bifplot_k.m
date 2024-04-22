@@ -3,11 +3,11 @@ K = 11;
 alphaList = 0.01:0.05:20.01;
 betaList = 0.01:0.05:20.01;
 
-matrixWithCells = cell(length(alphaList), length(betaList));
+parameterMatrix = cell(length(alphaList), length(betaList));
 
 for i = 1:length(alphaList)
     for j = 1:length(betaList)
-        matrixWithCells{i, j} = [alphaList(i), betaList(j)];
+        parameterMatrix{i, j} = [alphaList(i), betaList(j)];
     end
 end
 
@@ -58,7 +58,7 @@ for alpha = 0.01:0.05:20.01
 end
 
 % Extract coordinates from the parameter matrix
-coordinates = cell2mat(matrixWithCells(:));
+coordinates = cell2mat(parameterMatrix(:));
 
 % Extract colours from the colour matrix
 colours = cell2mat(colourMatrix(:));
