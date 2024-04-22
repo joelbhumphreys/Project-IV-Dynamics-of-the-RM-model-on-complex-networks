@@ -38,10 +38,10 @@ for d = [1, 5, 20]
 
             eqa = [eqa; extra_eqa];
 
-            unstable = false(1,3+num_rows);
+            unstable = false(1,4+num_rows);
 
             % Determining whether any of the eigenvalues are negative                        
-            for i = 1:(3+num_rows) % for each equilibrium
+            for i = 1:(4+num_rows) % for each equilibrium
                 infinite = false;
                 eigenvalues = find_eig(eqa(i,1),eqa(i,2),eqa(i,3),eqa(i,4),alpha,beta,K,d);
 
