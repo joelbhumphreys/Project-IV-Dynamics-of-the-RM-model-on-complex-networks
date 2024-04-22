@@ -30,7 +30,6 @@ for i = [1]
     figure;
     imagesc(xx);
     colorbar;
-    caxis([min(xx(:)), max(xx(:))/10]); % Adjust colorbar range
     
     xlabel('Node Index');
     ylabel('Time');
