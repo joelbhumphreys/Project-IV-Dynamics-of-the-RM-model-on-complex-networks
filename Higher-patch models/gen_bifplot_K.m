@@ -31,11 +31,13 @@ function gen_bif_plot_K()
             for beta = 15.01:0.13:35.01
                 beta_index = beta_index + 1;
     
-                % Find the equilibrium points                                                
+                % Find the equilibrium points                
                 eqa = gen_find_eqa(timeLimit,num_patches,alpha,beta,K,d);
-                eqa2 = find_pred_death(num_patches, K);
-                combined_eqa = vertcat(eqa, eqa2);
-                
+                coex_eqa(1:num_patches) = beta/(alpha-beta);
+                coex_eqa(num_patches+1:2*num_patches) = alpha/(alpha-beta)*(1-1/K*beta/(alpha-beta));
+                pred_free_eqa = find_pred_death(num_patches, K);
+                combined_eqa = vertcat(eqa, coex_eqa, pred_free_eqa);
+
                 num_rows = size(combined_eqa,1);
                 ordered_eqa = zeros(num_rows,num_patches*2);
     
