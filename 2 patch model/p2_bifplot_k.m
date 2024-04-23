@@ -57,16 +57,16 @@ for d = [1, 5, 20]
             end
 
             % Produce colour plots
-            if unstable(1) == false && all(unstable(2:3+num_rows)) == true % predator-free
+            if unstable(1) == false && all(unstable(2:4+num_rows)) == true % predator-free
                 colourMatrix{alpha_index, beta_index} = [1, 1, 0]; % yellow 
 
-            elseif unstable(1) == true && unstable(2) == true && unstable(3) == true && any(~unstable(4:3+num_rows)) == true % coexistence 
+            elseif unstable(1) == true && unstable(2) == true && unstable(3) == true && any(~unstable(4:4+num_rows)) == true % coexistence 
                 colourMatrix{alpha_index, beta_index} = [0, 0, 1]; % blue               
 
-            elseif unstable(1) == true && (unstable(2) == false || unstable(3) == false) && all(unstable(4:3+num_rows)) == true % partial-prey-death 
+            elseif unstable(1) == true && (unstable(2) == false || unstable(3) == false) && all(unstable(4:4+num_rows)) == true % partial-prey-death 
                 colourMatrix{alpha_index, beta_index} = [0, 1, 0]; % green
 
-            elseif unstable(1) == true && unstable(2) == true && unstable(3) == true && all(unstable(4:3+num_rows)) == true % non-equilibrium
+            elseif unstable(1) == true && unstable(2) == true && unstable(3) == true && all(unstable(4:4+num_rows)) == true % non-equilibrium
                 colourMatrix{alpha_index, beta_index} = [1, 0, 0]; % red
 
             else
