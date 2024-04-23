@@ -13,7 +13,8 @@ function num_stab_pnts = quan_stab_a(num_patches,d)
             K_index = K_index + 1;
 
             eqa = gen_find_eqa(num_patches,alpha,beta,K,d);
-            eqa2 = find_pred_death(num_patches, K);
+            eqa2(1:num_patches) = K;
+            eqa2(num_patches+1:2*num_patches) = 0;    
             combined_eqa = vertcat(eqa, eqa2);
             
             ppd_eqa = [];
