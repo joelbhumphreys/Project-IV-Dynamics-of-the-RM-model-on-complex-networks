@@ -61,13 +61,13 @@ for d = [1, 5, 20]
             if unstable(1) == false && all(unstable(2:4+num_rows)) == true % predator-free
                 colourMatrix{beta_index, K_index} = [1, 1, 0]; % yellow 
 
-            elseif unstable(1) == true && unstable(2) == true && unstable(3) == true && any(~unstable(4:3+num_rows)) == true % coexistence 
+            elseif unstable(1) == true && unstable(2) == true && unstable(3) == true && any(~unstable(4:4+num_rows)) == true % coexistence 
                 colourMatrix{beta_index, K_index} = [0, 0, 1]; % blue               
 
-            elseif unstable(1) == true && (unstable(2) == false || unstable(3) == false) && all(unstable(4:3+num_rows)) == true % partial-prey-death 
+            elseif unstable(1) == true && (unstable(2) == false || unstable(3) == false) && all(unstable(4:4+num_rows)) == true % partial-prey-death 
                 colourMatrix{beta_index, K_index} = [0, 1, 0]; % green
 
-            elseif unstable(1) == true && unstable(2) == true && unstable(3) == true && all(unstable(4:3+num_rows)) == true % non-equilibrium
+            elseif unstable(1) == true && unstable(2) == true && unstable(3) == true && all(unstable(4:4+num_rows)) == true % non-equilibrium
                 colourMatrix{beta_index, K_index} = [1, 0, 0]; % red
 
             else
