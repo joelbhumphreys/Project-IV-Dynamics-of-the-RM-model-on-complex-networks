@@ -15,7 +15,8 @@ d = 20;
 eqa = gen_find_eqa(timeLimit,num_patches,alpha,beta,K,d);
 coex_eqa(1:num_patches) = beta/(alpha-beta);
 coex_eqa(num_patches+1:2*num_patches) = alpha/(alpha-beta)*(1-1/K*beta/(alpha-beta));
-pred_free_eqa = find_pred_death(num_patches, K);
+pred_free_eqa(1:num_patches) = K;
+pred_free_eqa(num_patches+1:2*num_patches) = 0;    
 combined_eqa = vertcat(eqa, coex_eqa, pred_free_eqa);
 
 num_rows = size(combined_eqa,1);
